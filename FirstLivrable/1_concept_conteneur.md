@@ -45,3 +45,32 @@ et aussi les différences :
 
 Pour conclure, on peut facilement dire que les VM et les conteneurs sont deux technologies qui sont similaires même si on peut noter que les VM sont plus complexes et plus performantes, mais elles sont plus coûteuses à mettre en œuvre et à gérer.
 Tandis que les conteneurs sont plus simple à mettre en place, plus performant.
+
+# Partie 4 : Ligne de commande
+
+1. `docker ps`  : Cela affiche la liste des conteneurs actuellement en cours d'exécution sur votre système.
+2. `docker logs`  : Affiche les journaux (logs) d'un conteneur spécifié. 
+3. `docker run` : Cette commande permet de créer et de démarrer un conteneur basé sur une image Docker spécifiée.
+4. `docker create` : Ça crée un conteneur à partir d'une image spécifiée, mais ne le démarre pas.
+5. `docker exec` : Utilisée pour exécuter des commandes à l'intérieur d'un conteneur en cours d'exécution.
+EX: command docker exec -it <container name> /bin/bash : ouvre un shell interactif dans le conteneur spécifié.
+6. `docker stop [container ID]` : Arrête le conteneur spécifié.
+7. `docker rm [container ID]` : Supprime le conteneur spécifié. 
+8. `docker inspect [container ID]` : Fournit des informations détaillées sur le conteneur spécifié
+___
+9. `docker images` : Affiche la liste des images Docker disponibles localement sur votre machine.
+10. `docker push` : Envoie votre image vers le registre Docker, la rendant accessible à d'autres utilisateurs.
+11. `docker pull` : Télécharge une image Docker depuis un registre.
+12. `docker commit` : Crée une nouvelle image à partir des modifications apportées à un conteneur en cours d'exécution. 
+13. `docker rmi` : Supprime une ou plusieurs images Docker.
+___
+14. `docker volume` : Permet de créer un volume Docker.
+15. `docker network` : Utilisée pour créer un réseau Docker.
+16. `docker build` : Cette commande est utilisée pour construire une nouvelle image Docker à partir d'un fichier Dockerfile.
+17. `docker --version` : Cette commande est utilisée pour connaitre la version de docker.
+18. `docker restart` : Redémarre le conteneur Docker avec l'ID de conteneur mentionné dans la commande.
+19. `docker kill` : Arrête immédiatement le conteneur.
+
+___
+20. `docker login` : Cela permet de se connecter au hub docker.
+21. `docker info` : Cela permet d'obtenir des informations détaillées sur le docker installé sur le système
