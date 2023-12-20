@@ -1,5 +1,8 @@
 # projetDocker
 
+v1.0.4 :
+  - Ajout Registrer
+
 v1.0.3 :
   - Ajout Multi-services
   - Connexion Wordpress / mariadb

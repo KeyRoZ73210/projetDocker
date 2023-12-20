@@ -163,5 +163,14 @@ Je configure les variables d’environnement en statiques et en fonction de ce q
 l’application wordpress communique avec mariadb grâce à la variable d'environnement "WORDPRESS_DB_HOST" qui lui indique de se connecter à mariadb.
 Ensuite il y a les variables d'environnement comme "WORDPRESS_DB_NAME" qui nous donne le nom de la bdd, "WORDPRESS_DB_USER" qui nous donne le nom de l'utilisateur de la bdd et "WORDPRESS_DB_PASSWORD" qui nous donne le mdp pour s'y connecter
 
+Voici le lien de version 1.0.3 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0.3
+
 #### Docker Registry
 
+Il existe deux types de registry, celui plublic est plus simple à mettre en place cependant plus l'entreprise va grandir plus on aura besoin de sécurité sauf que celui public ne le permet pas, pour celui qui est privé, il offre une bonne sécurité.
+C'est pourquoi l'interêt d'avoir un registry interne dans une entreprise, c'est qu'il offre le plus grand potentiel en matière de sécurité et de configuration sauf qu'il demande une gestion prudente et la garantie que l'infrastructure du registre et les contrôles d'accès restent au sein de l'entreprise.
+
+<img src="./registry_vue.png">
+<img src="./registrer.png">
+
+Voici le lien de version 1.0.4 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0.4
