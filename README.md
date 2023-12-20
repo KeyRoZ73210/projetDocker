@@ -1,5 +1,9 @@
 # projetDocker
 
+v1.0.3 :
+  - Ajout Multi-services
+  - Connexion Wordpress / mariadb
+
 v1.0.2 :
   - Ajout dossier MDS-uglydockerfile
   - Optimisation image docker (Alpine)

@@ -147,6 +147,21 @@ Voici le lien de version 1.0.1 de mon app : https://github.com/KeyRoZ73210/proje
 
 #### Optimiser une image
 Voici le lien de version 1.0.2 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0.2
+<img src="./vue-ecran.png">
 
 Taille de l'image optimisé : 43.24MB
+<img src="./img-size.png">
+
+#### Stack Multi-Service avec Docker
+
+Voici l'application fonctionnelle sur l’url http://localhost:80 
+<img src="./wordpress.png">
+<img src="./multi-service.png">
+
+Je configure les variables d’environnement en statiques et en fonction de ce que je veux faire, c'est-à-dire, je voulais me connecter à mariadb avec wordpress donc j'ai configurer mes variables en fonctions de la demande.
+
+l’application wordpress communique avec mariadb grâce à la variable d'environnement "WORDPRESS_DB_HOST" qui lui indique de se connecter à mariadb.
+Ensuite il y a les variables d'environnement comme "WORDPRESS_DB_NAME" qui nous donne le nom de la bdd, "WORDPRESS_DB_USER" qui nous donne le nom de l'utilisateur de la bdd et "WORDPRESS_DB_PASSWORD" qui nous donne le mdp pour s'y connecter
+
+#### Docker Registry
 
