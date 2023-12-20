@@ -2,6 +2,7 @@ version: '3'
 
 services:
   myapp:
+    container_name: DevOps
     image: trainingtest:v1.0.0
     build:
       context: .
@@ -21,3 +22,5 @@ networks:
     ipam:
       config:
         - subnet: "192.168.0.0/24"
+  
+# docker-compose -p "projectdocker" up change le nom de la stack

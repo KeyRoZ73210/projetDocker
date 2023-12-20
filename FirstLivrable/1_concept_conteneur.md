@@ -142,5 +142,11 @@ $ docker inspect c2
 
 # Partie 8 : Exercice Pratique
 
-Voici le lien de version 1.0 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0
+#### Faire un dockerfile / docker-compose.yml
+Voici le lien de version 1.0.1 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0.1
+
+#### Optimiser une image
+Voici le lien de version 1.0.2 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0.2
+
+Taille de l'image optimisé : 43.24MB
 
