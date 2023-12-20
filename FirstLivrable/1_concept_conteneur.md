@@ -140,5 +140,7 @@ $ docker inspect --format '{{.HostConfig.NetworkMode}}' c2
 $ docker inspect c2
 ```
 
-# Partie 7 : Exercice Pratique
+# Partie 8 : Exercice Pratique
+
+Voici le lien de version 1.0 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0
 
