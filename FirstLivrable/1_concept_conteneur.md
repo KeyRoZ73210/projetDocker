@@ -277,4 +277,69 @@ On n'y rajoute les ports pour la connexion entre les différents fichiers pour q
 
 <img src="./dockerisation.png">
 
-Voici le lien de version 1.0.5 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0.5
+lien vers l'image back : https://hub.docker.com/layers/keyroz/backend/latest/images/sha256:e0df9969761e5f85e71347fe4be97fbc18b92c69bdd8846c38c0b6dbdef166a6?uuid=c9fcbea3-ee1a-4818-9996-75096a19c785%0A
+
+lien vers l'image front : https://hub.docker.com/layers/keyroz/frontend/latest/images/sha256:e0df9969761e5f85e71347fe4be97fbc18b92c69bdd8846c38c0b6dbdef166a6?uuid=c9fcbea3-ee1a-4818-9996-75096a19c785%0A
+
+lien vers le github : https://github.com/KeyRoZ73210/projetDocker/tree/main/API_GraphQL
+
+# Partie : Un cluster de conteneurs
+
+La clusterisation des conteneurs à plusieurs éléments comme :
+
+Plan de contrôle : ensemble de processus qui contrôle les nœuds Kubernetes et assigne toutes les tâches.
+
+Nœuds : machines qui exécutent les tâches qui leur sont assignées par le plan de contrôle.
+
+Pod : un ou plusieurs conteneurs déployés sur un seul nœud. Le pod est l'objet Kubernetes le plus petit et le plus simple.
+
+Service : méthode qui permet d'exposer une application exécutée sur un ensemble de pods en tant que service réseau. Le service dissocie la définition des tâches des pods.
+
+Volume : répertoire contenant des données auxquelles les conteneurs d'un pod peuvent accéder. Un volume Kubernetes a la même durée de vie que le pod dans lequel il se trouve et cette durée de vie dépasse celle de n'importe quel conteneur exécuté dans le pod. Ainsi, les données sont conservées lorsqu'un conteneur redémarre.
+
+Espace de noms : cluster virtuel. Les espaces de noms permettent à Kubernetes de gérer plusieurs clusters (pour plusieurs équipes ou projets) au sein d'un même cluster physique.
+
+Un microservices désigne un style d'architecture utilisé dans le développement d'applications. Elle permet de décomposer une application volumineuse en composants indépendants, chaque élément ayant ses propres responsabilités.
+
+Scalabilité :
+La scalabilité c'est la capacité d'un système à s'ajuster à la croissance de la charge ou des demandes. Elle peut être horizontale avec l'ajout d'instances ou verticale avec l'augmentation des ressources d'une instance existante.
+
+Availability ça concerne la capacité d'un système à rester opérationnel malgré les pannes. Les concepts clés incluent la redondance, la répartition de la charge et la clusterisation.
+
+et pour le Load Balancing c'est L'équilibrage de charge consiste à distribuer équitablement la charge de travail entre plusieurs ressources pour optimiser les performances. Cela implique la répartition équilibrée du trafic, l'utilisation d'algorithmes spécifiques et le recours à des solutions matérielles ou logicielles.
+
+Elle permet de répondre à ces problèmatiques car elle permet d'améliorer la scalabilité en ajoutant facilement des ressources, d'assurer la disponibilité en gérant les pannes de manière transparente, et d'optimiser les performances en équilibrant la charge entre les différentes parties du cluster.
+
+Voici la liste de tous les outils permettant d'orchestrer un cluster de conteneurs sont :
+  - Kubernetes
+  - Docker Swarm
+  - Amazon ECS
+  - OpenShift
+  - Nomad
+  - Mesos
+  - Rancher
+
+#### Kubernet
+
+Kubelet : Le Kubelet est un agent qui s'exécute sur chaque nœud du cluster. Il est responsable de l'exécution des conteneurs présents sur le nœud et de la communication avec le contrôle-plane (plan de contrôle) de Kubernetes.
+
+Container Runtime : Il s'agit du moteur qui exécute les conteneurs. Docker, containerd et CRI-O sont des exemples de runtimes pris en charge par Kubernetes.
+
+Kube Proxy : Kube Proxy est responsable de la gestion des règles de réseau sur le nœud. Il assure la communication réseau entre les services à l'intérieur du cluster et entre le cluster et l'extérieur.
+
+Kube DNS : Kube DNS est un service qui assure la résolution des noms de service à l'intérieur du cluster. Il permet aux conteneurs de se référencer entre eux par des noms de service plutôt que par des adresses IP.
+
+Pause Containers : Chaque nœud exécute un conteneur Pause, qui sert de conteneur parent aux autres conteneurs sur le nœud. Il facilite la gestion des conteneurs individuels par le Kubelet.
+
+Node Status : Le nœud signale son statut au plan de contrôle de Kubernetes, indiquant s'il est prêt à recevoir des pods ou s'il est en cours de maintenance.
+
+CAdvisor (Container Advisor) : CAdvisor collecte, agrège et exporte des informations sur les performances et la consommation des ressources des conteneurs en cours d'exécution sur le nœud.
+
+Kubelet API Server : Le Kubelet expose une API que le plan de contrôle de Kubernetes peut utiliser pour gérer les conteneurs sur le nœud.
+
+Superviseur de Ressources (Node Resource Manager) : Il surveille l'utilisation des ressources (CPU, mémoire, etc.) sur le nœud et s'assure que les limites spécifiées dans les pods sont respectées.
+
+Gestionnaire de CGroup (Node CGroup Manager) : Il assure la gestion des groupes de contrôle (CGroups), une fonctionnalité du noyau Linux utilisée pour isoler, prioriser et mesurer l'utilisation des ressources.
+
+
+<img src="./kubernet.svg">
