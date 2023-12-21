@@ -1,5 +1,8 @@
 # projetDocker
 
+v1.0.5 :
+  - Dockerisation projet perso
+
 v1.0.4 :
   - Ajout Registrer
 
