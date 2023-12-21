@@ -174,3 +174,107 @@ C'est pourquoi l'interêt d'avoir un registry interne dans une entreprise, c'est
 <img src="./registrer.png">
 
 Voici le lien de version 1.0.4 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0.4
+
+#### Dockerisation de votre projet personnel
+
+Tous d'abord, il faut créer un dockerfile pour chaque dossier c'est-à-dire dans ce cas un pour le back et un autre pour le front
+ensuite, il faut créer un docker-compose.yml pour connecter les dockerfiles comme ceci :
+
+```bash
+services:
+  backend:
+    container_name: DockerBack
+    image: keyroz/backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      MONGO_URI: mongodb://mongodb:27017
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongodb
+    networks:
+      - mongodb_network
+  
+  frontend:
+    container_name: DockerFront
+    image: keyroz/frontend
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      VITE_GRAPHQL_URL: http://backend:8081/graphql
+    links:
+      - backend
+    ports:
+      - 4000:80
+    depends_on:
+      - backend
+    networks:
+      - mongodb_network
+```
+
+Une fois cela fait, on créer les images pour le back, front et mongodb:
+
+```
+version: '3'
+
+services:
+  backend:
+    container_name: DockerBack
+    image: keyroz/backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      MONGO_URI: mongodb://mongodb:27017
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongodb
+    networks:
+      - mongodb_network
+  
+  frontend:
+    container_name: DockerFront
+    image: keyroz/frontend
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      VITE_GRAPHQL_URL: http://backend:8081/graphql
+    links:
+      - backend
+    ports:
+      - 4000:80
+    depends_on:
+      - backend
+    networks:
+      - mongodb_network
+  
+  mongodb:
+    container_name: MongoDB
+    image: mongo:latest
+    volumes:
+      - mongodb_data:/var/lib/mongo
+    ports:
+      - 27017:27017
+    networks:
+      - mongodb_network
+
+volumes:
+  mongodb_data:
+
+networks:
+  mongodb_network:
+    name: mongodb_network
+    driver: bridge
+```
+
+On créer un volume qui va integrer les données de la bdd de mongodb 
+On n'y rajoute les ports pour la connexion entre les différents fichiers pour que cela fonctionne
+
+<img src="./dockerisation.png">
+
+Voici le lien de version 1.0.5 de mon app : https://github.com/KeyRoZ73210/projetDocker/releases/tag/v1.0.5
